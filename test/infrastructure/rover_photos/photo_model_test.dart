@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:eyes_of_rovers_tdd/domain/entities/photo.dart';
 import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/models/photo_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -15,6 +16,17 @@ void main() {
       final res = PhotoModel.fromJson(jsonMap);
 
       expect(expected.id, equals(res.id));
+    });
+
+    test(
+        'should map to Photo'
+        ' when toDomain is called', () {
+      final photoModel = PhotoModel(id: 102);
+      final photo = Photo(102);
+
+      final result = photoModel.toDomain();
+
+      expect(photo, result);
     });
   });
 }
