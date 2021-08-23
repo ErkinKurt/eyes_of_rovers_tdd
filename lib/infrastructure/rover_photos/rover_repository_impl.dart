@@ -4,12 +4,12 @@ import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/camera_type.dart
 import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/photo.dart';
 import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/rover_type.dart';
 import 'package:eyes_of_rovers_tdd/domain/rover_photos/repositories/rover_repository.dart';
-import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/service/rover_service.dart';
+import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/data_source/rover_data_source.dart';
 
 class RoverRepositoryImpl extends RoverRepository {
-  RoverRepositoryImpl(this._roverService);
+  RoverRepositoryImpl(this._roverDataSource);
 
-  final RoverService _roverService;
+  final RoverRemoteDataSource _roverDataSource;
 
   @override
   Future<DataResult<List<Photo>>> getRoverPhotos(
@@ -18,7 +18,7 @@ class RoverRepositoryImpl extends RoverRepository {
     int pageIndex,
   ) async {
     try {
-      final result = await _roverService.getRoverPhotos(
+      final result = await _roverDataSource.getRoverPhotos(
         cameraType,
         roverType,
         pageIndex,

@@ -2,32 +2,32 @@ import 'package:eyes_of_rovers_tdd/domain/core/failure.dart';
 import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/camera_type.dart';
 import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/photo.dart';
 import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/rover_type.dart';
+import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/data_source/rover_data_source.dart';
 import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/models/photo_model.dart';
 import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/rover_repository_impl.dart';
-import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/service/rover_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../utility/falback_registrant.dart';
 
-class MockRoverService extends Mock implements RoverService {}
+class MockRemoteRoverDataSource extends Mock implements RoverRemoteDataSource {}
 
 void main() {
   group('RoverRepositoryImpl', () {
     late RoverRepositoryImpl roverRepositoryImpl;
-    late RoverService roverService;
+    late RoverRemoteDataSource roverDataSource;
 
     setUpAll(() {
       registerFallbackValues([CameraType.CHEMCAM, RoverType.Curiosity]);
     });
 
     setUp(() {
-      roverService = MockRoverService();
-      roverRepositoryImpl = RoverRepositoryImpl(roverService);
+      roverDataSource = MockRemoteRoverDataSource();
+      roverRepositoryImpl = RoverRepositoryImpl(roverDataSource);
     });
 
     test('should invoke correct method from service', () async {
-      when(() => roverService.getRoverPhotos(
+      when(() => roverDataSource.getRoverPhotos(
             any(),
             any(),
             any(),
@@ -39,7 +39,7 @@ void main() {
         1,
       );
 
-      verify(() => roverService.getRoverPhotos(
+      verify(() => roverDataSource.getRoverPhotos(
             any(),
             any(),
             any(),
@@ -47,16 +47,16 @@ void main() {
     });
 
     test('should return failure' ' when exception occurs', () async {
-      when(() => roverService.getRoverPhotos(any(), any(), any())).thenThrow(Exception());
+      when(() => roverDataSource.getRoverPhotos(any(), any(), any())).thenThrow(Exception());
 
       final result = await roverRepositoryImpl.getRoverPhotos(CameraType.CHEMCAM, RoverType.Curiosity, 1);
 
-      verify(() => roverService.getRoverPhotos(any(), any(), any())).called(1);
+      verify(() => roverDataSource.getRoverPhotos(any(), any(), any())).called(1);
       expect(Failure(), result.error);
     });
 
     test('should return photos' ' when service succeed', () async {
-      when(() => roverService.getRoverPhotos(
+      when(() => roverDataSource.getRoverPhotos(
             any(),
             any(),
             any(),
@@ -68,7 +68,7 @@ void main() {
 
       final result = await roverRepositoryImpl.getRoverPhotos(CameraType.CHEMCAM, RoverType.Curiosity, 1);
 
-      verify(() => roverService.getRoverPhotos(
+      verify(() => roverDataSource.getRoverPhotos(
             any(),
             any(),
             any(),

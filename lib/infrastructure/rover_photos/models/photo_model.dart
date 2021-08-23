@@ -28,6 +28,8 @@ class PhotoModel {
 
   Map<String, dynamic> toJson() => _$PhotoModelToJson(this);
 
+  static const fromJsonFactory = _$PhotoModelFromJson;
+
   Photo toDomain() {
     return Photo(id!);
   }
