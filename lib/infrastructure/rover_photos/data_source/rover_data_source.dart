@@ -2,6 +2,7 @@ import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/camera_type.dart
 import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/rover_type.dart';
 import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/models/photo_model.dart';
 import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/service/rover_service.dart';
+import 'package:injectable/injectable.dart';
 
 abstract class RoverDataSource {
   Future<List<PhotoModel>> getRoverPhotos(
@@ -11,6 +12,7 @@ abstract class RoverDataSource {
   );
 }
 
+@Injectable(as: RoverDataSource)
 class RoverRemoteDataSource implements RoverDataSource {
   RoverRemoteDataSource(this._roverService);
 

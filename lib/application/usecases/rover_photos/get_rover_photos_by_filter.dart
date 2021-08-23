@@ -4,7 +4,9 @@ import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/camera_type.dart
 import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/photo.dart';
 import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/rover_type.dart';
 import 'package:eyes_of_rovers_tdd/domain/rover_photos/repositories/rover_repository.dart';
+import 'package:injectable/injectable.dart';
 
+@Injectable()
 class GetRoverPhotosByFilter extends UseCase<List<Photo>, GetRoverPhotosByFilterParams> {
   final RoverRepository roverRepository;
 
