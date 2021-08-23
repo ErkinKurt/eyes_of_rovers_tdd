@@ -12,6 +12,7 @@ dependencies:
   equatable: ^2.0.3
   flutter:
     sdk: flutter
+  get_it: ^7.2.0
   injectable: ^1.4.1
   json_serializable: ^4.1.4
   mockito: ^5.0.14
