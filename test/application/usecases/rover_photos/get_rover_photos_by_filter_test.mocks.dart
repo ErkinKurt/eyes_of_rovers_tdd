@@ -5,10 +5,13 @@
 import 'dart:async' as _i4;
 
 import 'package:eyes_of_rovers_tdd/domain/core/data_result.dart' as _i2;
-import 'package:eyes_of_rovers_tdd/domain/entities/camera_type.dart' as _i6;
-import 'package:eyes_of_rovers_tdd/domain/entities/photo.dart' as _i5;
-import 'package:eyes_of_rovers_tdd/domain/entities/rover_type.dart' as _i7;
-import 'package:eyes_of_rovers_tdd/domain/repositories/rover_repository.dart'
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/camera_type.dart'
+    as _i6;
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/photo.dart'
+    as _i5;
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/rover_type.dart'
+    as _i7;
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/repositories/rover_repository.dart'
     as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 

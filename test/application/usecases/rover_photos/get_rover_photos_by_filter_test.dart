@@ -1,10 +1,10 @@
 import 'package:eyes_of_rovers_tdd/application/usecases/rover_photos/get_rover_photos_by_filter.dart';
 import 'package:eyes_of_rovers_tdd/domain/core/data_result.dart';
 import 'package:eyes_of_rovers_tdd/domain/core/failure.dart';
-import 'package:eyes_of_rovers_tdd/domain/entities/camera_type.dart';
-import 'package:eyes_of_rovers_tdd/domain/entities/photo.dart';
-import 'package:eyes_of_rovers_tdd/domain/entities/rover_type.dart';
-import 'package:eyes_of_rovers_tdd/domain/repositories/rover_repository.dart';
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/camera_type.dart';
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/photo.dart';
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/rover_type.dart';
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/repositories/rover_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

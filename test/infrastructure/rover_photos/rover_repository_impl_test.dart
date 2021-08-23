@@ -1,7 +1,7 @@
 import 'package:eyes_of_rovers_tdd/domain/core/failure.dart';
-import 'package:eyes_of_rovers_tdd/domain/entities/camera_type.dart';
-import 'package:eyes_of_rovers_tdd/domain/entities/photo.dart';
-import 'package:eyes_of_rovers_tdd/domain/entities/rover_type.dart';
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/camera_type.dart';
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/photo.dart';
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/rover_type.dart';
 import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/models/photo_model.dart';
 import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/rover_repository_impl.dart';
 import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/service/rover_service.dart';

@@ -1,9 +1,9 @@
 import 'package:eyes_of_rovers_tdd/application/core/use_case.dart';
 import 'package:eyes_of_rovers_tdd/domain/core/data_result.dart';
-import 'package:eyes_of_rovers_tdd/domain/entities/camera_type.dart';
-import 'package:eyes_of_rovers_tdd/domain/entities/photo.dart';
-import 'package:eyes_of_rovers_tdd/domain/entities/rover_type.dart';
-import 'package:eyes_of_rovers_tdd/domain/repositories/rover_repository.dart';
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/camera_type.dart';
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/photo.dart';
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/rover_type.dart';
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/repositories/rover_repository.dart';
 
 class GetRoverPhotosByFilter extends UseCase<List<Photo>, GetRoverPhotosByFilterParams> {
   final RoverRepository roverRepository;

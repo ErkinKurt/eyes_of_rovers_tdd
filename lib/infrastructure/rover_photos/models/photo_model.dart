@@ -1,4 +1,4 @@
-import 'package:eyes_of_rovers_tdd/domain/entities/photo.dart';
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/photo.dart';
 import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/models/camera_model.dart';
 import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/models/rover_model.dart';
 

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:eyes_of_rovers_tdd/domain/entities/photo.dart';
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/photo.dart';
 import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/models/photo_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
