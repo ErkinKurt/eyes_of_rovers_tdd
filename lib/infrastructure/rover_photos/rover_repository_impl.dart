@@ -8,7 +8,7 @@ import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/data_source/rover
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: RoverRepository)
-class RoverRepositoryImpl extends RoverRepository {
+class RoverRepositoryImpl implements RoverRepository {
   RoverRepositoryImpl(this._roverDataSource);
 
   final RoverDataSource _roverDataSource;

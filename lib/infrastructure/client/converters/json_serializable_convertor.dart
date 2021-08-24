@@ -1,6 +1,8 @@
 import 'package:chopper/chopper.dart';
 import 'package:eyes_of_rovers_tdd/infrastructure/client/converters/json_type_parser.dart';
+import 'package:injectable/injectable.dart';
 
+@Injectable(as: JsonConverter)
 class JsonSerializableConverter extends JsonConverter {
   @override
   Response<ResultType> convertResponse<ResultType, Item>(Response response) {

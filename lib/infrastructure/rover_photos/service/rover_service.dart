@@ -8,7 +8,7 @@ part 'rover_service.chopper.dart';
 @ChopperApi(baseUrl: "/rovers")
 abstract class RoverService extends ChopperService {
   @factoryMethod
-  static RoverService create([@factoryParam ChopperClient? chopperClient]) => _$RoverService(chopperClient);
+  static RoverService create(ChopperClient? chopperClient) => _$RoverService(chopperClient);
 
   @Get(path: "/{rover_type}/photos")
   Future<Response<List<PhotoModel>>> getRoverPhotos(
