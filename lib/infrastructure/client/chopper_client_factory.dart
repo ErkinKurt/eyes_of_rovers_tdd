@@ -7,12 +7,10 @@ class ChopperClientFactoryParams {
   ChopperClientFactoryParams({
     @Named('BaseUrl') required this.baseUrl,
     required this.jsonConverter,
-    @Named('services') required this.services,
   });
 
   final String baseUrl;
   final JsonConverter jsonConverter;
-  final Iterable<ChopperService> services;
 }
 
 @module
@@ -20,14 +18,10 @@ abstract class ChopperModule {
   @Named("BaseUrl")
   String get baseUrl => 'https://api.nasa.gov';
 
-  @Named("Services")
-  Iterable<ChopperService> get services => const [];
-
-  @factoryMethod
-  ChopperClient chopperClientFactory(@factoryParam ChopperClientFactoryParams? params) {
+  @singleton
+  ChopperClient chopperClientFactory(ChopperClientFactoryParams? params) {
     return ChopperClient(
       baseUrl: params?.baseUrl ?? baseUrl,
-      services: params?.services ?? services,
       converter: params?.jsonConverter ?? JsonSerializableConverter(),
     );
   }
