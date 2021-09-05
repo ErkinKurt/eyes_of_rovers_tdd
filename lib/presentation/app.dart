@@ -1,8 +1,5 @@
-import 'package:eyes_of_rovers_tdd/application/usecases/rover_photos/get_rover_photos_by_filter.dart';
-import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/camera_type.dart';
-import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/rover_type.dart';
-import 'package:eyes_of_rovers_tdd/injection_container.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -47,15 +44,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
-  Future<void> _incrementCounter() async {
-    await gg();
-  }
+  String envText = dotenv.env['APP_NAME']!;
 
   Future<void> gg() async {
-    final usecase = serviceLocator.get<GetRoverPhotosByFilter>();
-    final res = await usecase.call(GetRoverPhotosByFilterParams(
-        CameraType.CHEMCAM, RoverType.Curiosity, 1));
+    setState(() {
+      envText = 'balkon';
+    });
   }
 
   @override
@@ -99,11 +93,15 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            Text(
+              '$envText',
+              style: Theme.of(context).textTheme.headline4,
+            ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: gg,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.

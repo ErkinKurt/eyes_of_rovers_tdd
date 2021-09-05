@@ -17,9 +17,10 @@ dependencies:
   json_serializable: ^4.1.4
   mockito: ^5.0.14
   mocktail: ^0.1.4
+  flutter_dotenv: ^5.0.2
 
 dev_dependencies:
-  build_runner: ^2.1.1
+  build_runner: ^2.1.1  
   chopper_generator: ^4.0.1
   injectable_generator: ^1.4.1
 
@@ -28,3 +29,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+  - .env
