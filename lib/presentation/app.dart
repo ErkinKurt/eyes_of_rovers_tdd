@@ -44,7 +44,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  String envText = dotenv.env['\$APP_NAME']!;
+  String envText = dotenv.env['\$APP_NAME'] ?? 'BOS GECTI REIS';
+  String fromEnv = String.fromEnvironment('\$APP_NAME', defaultValue: 'bu da bos');
 
   Future<void> gg() async {
     setState(() {
@@ -95,6 +96,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$envText',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            Text(
+              '$fromEnv',
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
