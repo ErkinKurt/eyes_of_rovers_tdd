@@ -7,7 +7,8 @@ import 'package:eyes_of_rovers_tdd/domain/rover_photos/repositories/rover_reposi
 import 'package:injectable/injectable.dart';
 
 @Injectable()
-class GetRoverPhotosByFilter extends UseCase<List<Photo>, GetRoverPhotosByFilterParams> {
+class GetRoverPhotosByFilter
+    extends UseCase<List<Photo>, GetRoverPhotosByFilterParams> {
   final RoverRepository roverRepository;
 
   GetRoverPhotosByFilter(this.roverRepository);

@@ -25,5 +25,6 @@ class JsonTypeParser {
     return jsonFactory(values);
   }
 
-  static List<T> _decodeList<T>(Iterable values) => values.where((v) => v != null).map<T>((v) => decode<T>(v)).toList();
+  static List<T> _decodeList<T>(Iterable values) =>
+      values.where((v) => v != null).map<T>((v) => decode<T>(v)).toList();
 }

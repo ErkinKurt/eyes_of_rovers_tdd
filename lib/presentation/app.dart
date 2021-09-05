@@ -54,7 +54,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> gg() async {
     final usecase = serviceLocator.get<GetRoverPhotosByFilter>();
-    final res = await usecase.call(GetRoverPhotosByFilterParams(CameraType.CHEMCAM, RoverType.Curiosity, 1));
+    final res = await usecase.call(GetRoverPhotosByFilterParams(
+        CameraType.CHEMCAM, RoverType.Curiosity, 1));
   }
 
   @override

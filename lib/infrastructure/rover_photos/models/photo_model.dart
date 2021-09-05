@@ -24,7 +24,8 @@ class PhotoModel {
   DateTime? earthDate;
   RoverModel? rover;
 
-  factory PhotoModel.fromJson(Map<String, dynamic> json) => _$PhotoModelFromJson(json);
+  factory PhotoModel.fromJson(Map<String, dynamic> json) =>
+      _$PhotoModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$PhotoModelToJson(this);
 

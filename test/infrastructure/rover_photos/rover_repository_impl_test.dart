@@ -47,11 +47,14 @@ void main() {
     });
 
     test('should return failure' ' when exception occurs', () async {
-      when(() => roverDataSource.getRoverPhotos(any(), any(), any())).thenThrow(Exception());
+      when(() => roverDataSource.getRoverPhotos(any(), any(), any()))
+          .thenThrow(Exception());
 
-      final result = await roverRepositoryImpl.getRoverPhotos(CameraType.CHEMCAM, RoverType.Curiosity, 1);
+      final result = await roverRepositoryImpl.getRoverPhotos(
+          CameraType.CHEMCAM, RoverType.Curiosity, 1);
 
-      verify(() => roverDataSource.getRoverPhotos(any(), any(), any())).called(1);
+      verify(() => roverDataSource.getRoverPhotos(any(), any(), any()))
+          .called(1);
       expect(Failure(), result.error);
     });
 
@@ -66,7 +69,8 @@ void main() {
         ],
       );
 
-      final result = await roverRepositoryImpl.getRoverPhotos(CameraType.CHEMCAM, RoverType.Curiosity, 1);
+      final result = await roverRepositoryImpl.getRoverPhotos(
+          CameraType.CHEMCAM, RoverType.Curiosity, 1);
 
       verify(() => roverDataSource.getRoverPhotos(
             any(),
