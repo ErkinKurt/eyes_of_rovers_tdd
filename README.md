@@ -1,16 +1,10 @@
 # eyes_of_rovers_tdd
 
-A new Flutter project.
+Tutorial project for my team to get a long with TDD. It shows the basics of Dependency Inversion via Service Locator pattern called GetIt in flutter. In addition, injectable is used to register dependencies to GetIt via source generation. 
 
-## Getting Started
+# Structure
+Clean architecture is followed to create N-Layered architecture. 
+Domain, Application, Infrastructure and Presentation layers is shown. 
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Domain Validations
+Not shown in the project right now but, the domain validations will be `Always Valid` approach. Which ensures that the entities that we are working on will be fully trusted. 
