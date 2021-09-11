@@ -27,6 +27,7 @@ class RoverModel {
   int? totalPhotos;
   List<CameraModel>? cameras;
 
-  factory RoverModel.fromJson(Map<String, dynamic> json) => _$RoverModelFromJson(json);
+  factory RoverModel.fromJson(Map<String, dynamic> json) =>
+      _$RoverModelFromJson(json);
   Map<String, dynamic> toJson() => _$RoverModelToJson(this);
 }

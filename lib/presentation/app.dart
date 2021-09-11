@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -43,15 +46,13 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String envText = dotenv.env['\$APP_NAME'] ?? 'BOS GECTI REIS';
+  String myNewText = Platform.environment['\$KRAKEN_PLATFORM_NAME'] ?? 'YOK DAHA NELER';
+  String fromEnv = String.fromEnvironment('\$APP_NAME', defaultValue: 'bu da bos');
 
-  void _incrementCounter() {
+  Future<void> gg() async {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
+      envText = 'balkon';
     });
   }
 
@@ -96,11 +97,23 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            Text(
+              '$envText',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            Text(
+              '$fromEnv',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            Text(
+              '$myNewText',
+              style: Theme.of(context).textTheme.headline4,
+            ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: gg,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.

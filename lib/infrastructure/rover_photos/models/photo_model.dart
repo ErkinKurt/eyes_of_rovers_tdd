@@ -1,3 +1,4 @@
+import 'package:eyes_of_rovers_tdd/domain/rover_photos/entities/photo.dart';
 import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/models/camera_model.dart';
 import 'package:eyes_of_rovers_tdd/infrastructure/rover_photos/models/rover_model.dart';
 
@@ -23,7 +24,14 @@ class PhotoModel {
   DateTime? earthDate;
   RoverModel? rover;
 
-  factory PhotoModel.fromJson(Map<String, dynamic> json) => _$PhotoModelFromJson(json);
+  factory PhotoModel.fromJson(Map<String, dynamic> json) =>
+      _$PhotoModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$PhotoModelToJson(this);
+
+  static const fromJsonFactory = _$PhotoModelFromJson;
+
+  Photo toDomain() {
+    return Photo(id!);
+  }
 }

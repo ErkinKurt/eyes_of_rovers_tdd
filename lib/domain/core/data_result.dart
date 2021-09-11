@@ -30,7 +30,8 @@ abstract class DataResult<S> extends Equatable {
   /// Transforms values of [error] and [data] in new a `DataResult` type. Only
   /// the matching function to the object type will be executed. For example,
   /// for a `SuccessResult` object only the [fnData] function will be executed.
-  DataResult<T> either<T>(Failure Function(Failure error) fnFailure, T Function(S data) fnData);
+  DataResult<T> either<T>(
+      Failure Function(Failure error) fnFailure, T Function(S data) fnData);
 
   /// Transforms value of [data] allowing a new `DataResult` to be returned.
   /// A `SuccessResult` might return a `FailureResult` and vice versa.
@@ -58,7 +59,8 @@ class _SuccessResult<S> extends DataResult<S> {
   _SuccessResult(this._value);
 
   @override
-  _SuccessResult<T> either<T>(Failure Function(Failure error) fnFailure, T Function(S data) fnData) {
+  _SuccessResult<T> either<T>(
+      Failure Function(Failure error) fnFailure, T Function(S data) fnData) {
     return _SuccessResult<T>(fnData(_value));
   }
 
@@ -86,7 +88,8 @@ class _FailureResult<S> extends DataResult<S> {
   _FailureResult(this._value);
 
   @override
-  _FailureResult<T> either<T>(Failure Function(Failure error) fnFailure, T Function(S data) fnData) {
+  _FailureResult<T> either<T>(
+      Failure Function(Failure error) fnFailure, T Function(S data) fnData) {
     return _FailureResult<T>(fnFailure(_value));
   }
 
